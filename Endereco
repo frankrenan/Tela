@@ -1,0 +1,25 @@
+package Model;
+public class Endereco {
+    private String rua;
+    private int casa;
+    private String bairro;
+   
+    public void setRua(String rua){
+        this.rua = rua;
+    }
+    public String getRua(){
+        return rua;
+    }
+    public void setCasa(int casa){
+        this.casa = casa;
+    }
+    public int getCasa(){
+        return casa;
+    }
+    public void setBairro(String bairro){
+        this.bairro = bairro;
+    }
+    public String getBairro(){
+        return bairro;
+    }
+}
