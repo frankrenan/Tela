@@ -1,0 +1,33 @@
+package Model;
+public class Administrador extends Usuario {
+    private String nome;
+    private Endereco end;
+    
+    public Administrador(){
+        end = new Endereco();
+    }
+    public void setNome(String nome){
+        this.nome = nome;
+    }
+    public String getNome(){
+        return nome;
+    }
+    public void setRua(String rua){
+        this.end.setRua(rua);
+    }
+    public String getRua(){
+        return end.getRua();
+    }
+    public void setCasa(int casa){
+        this.end.setCasa(casa);
+    }
+    public int getCasa(){
+        return end.getCasa();
+    }
+    public void setBairro(String bairro){
+        this.end.setBairro(bairro);
+    }
+    public String getBairro(){
+        return end.getBairro();
+    }
+}
