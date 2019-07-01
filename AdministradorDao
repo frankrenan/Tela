@@ -1,0 +1,26 @@
+package Dao;
+import Model.*;
+import Model.Usuario;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+public class AdministradorDao extends Usuario {
+    protected ArrayList <Administrador> listadmin = new ArrayList();
+    
+    public void Cadastrar(Administrador admin){
+        listadmin.add(admin);
+    }
+    public void Listar(Administrador admin){
+        for (Administrador aux: listadmin){
+            JOptionPane.showMessageDialog(null, "Funcionario: "+aux.getNome()+"\n Rua: "+aux.getRua()+"\n Casa: "+aux.getCasa()+"\n Bairro: "+aux.getBairro());
+        }
+    }
+    public Usuario RealizarLogin(Usuario user){
+        for (Administrador aux: listadmin){
+            if (aux.getLogin().equals(user.getLogin())&& aux.getSenha().equals(user.getSenha())){
+                JOptionPane.showMessageDialog(null, "Bem vindo Administrador: "+aux.getNome());
+                return aux;
+            }
+        }
+        return null;
+    }
+}
