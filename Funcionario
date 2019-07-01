@@ -1,0 +1,45 @@
+package Model;
+
+public class Funcionario extends Usuario{
+    private String nome;
+    private int matricula;
+    private Endereco end;
+    
+   
+    
+    public Funcionario(){
+        end = new Endereco();
+    }
+    public void setNome(String nome){
+        this.nome = nome;
+    }
+    public String getNome(){
+        return nome;
+    }
+    public void setMatricula(int matricula){
+        this.matricula = matricula;
+    }
+    public int getMatricula(){
+        return matricula;
+    }
+    public void setRua(String rua){
+        this.end.setRua(rua);
+    }
+    public String getRua(){
+        return end.getRua();
+    }
+    public void setCasa(int casa){
+        this.end.setCasa(casa);
+    }
+    public int getCasa(){
+        return end.getCasa();
+    }
+    
+    public void setBairro(String bairro){
+        this.end.setBairro(bairro);
+    }
+    public String getBairro(){
+        return end.getBairro();
+    }
+    
+}
