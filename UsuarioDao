@@ -1,0 +1,17 @@
+package Dao;
+import Model.*;
+import javax.swing.JOptionPane;
+public class UsuarioDao {
+    public Usuario RealizarLogin(Usuario user){
+        if (user.getLogin().equals("Frank")&& user.getSenha().equals("8155057")){
+            JOptionPane.showMessageDialog(null, "Bem vindo Administrador Geral: "+user.getLogin());
+            return user;
+        }
+        return null;
+    }
+    public void Listar(){
+       Administrador admin = new Administrador();
+       admin.setNome("Frank Renan Taveira Lima");
+       JOptionPane.showMessageDialog(null, "Administrador Geral: "+admin.getNome());
+    }
+}
