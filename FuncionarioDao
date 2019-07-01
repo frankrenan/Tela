@@ -1,0 +1,25 @@
+package Dao;
+import Model.*;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+public class FuncionarioDao extends Usuario {
+    protected ArrayList <Funcionario> listafunc = new ArrayList();
+    public void Cadastrar(Funcionario func){
+        listafunc.add(func);
+    }
+    public Funcionario Listar(Funcionario func){
+        for (Funcionario aux: listafunc){
+            JOptionPane.showMessageDialog(null, " Funcionario: "+aux.getNome()+"\n Matrícula: "+aux.getMatricula()+"\n Rua: "+aux.getRua()+"\n Casa: "+aux.getCasa()+"\n Bairro: "+aux.getBairro());
+        }
+        return null;
+    }
+    public Usuario RealizarLogin(Usuario user){
+        for (Funcionario aux: listafunc){
+            if (aux.getLogin().equals(user.getLogin())&& aux.getSenha().equals(user.getSenha())){
+                JOptionPane.showMessageDialog(null, "Bem vindo Funcionário: "+aux.getNome());
+                return aux;
+            }
+        }
+        return null;
+    }
+}
