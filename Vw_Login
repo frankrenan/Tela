@@ -1,0 +1,33 @@
+//BOTÃO  ENTRAR 
+private void btEntrarActionPerformed(java.awt.event.ActionEvent evt) {                                         
+       Usuario user = new Usuario();
+       user.setLogin(txtLogin.getText());
+       user.setSenha(txtSenha.getText());
+       boolean acesso = false;
+       if (Backup.lista1.RealizarLogin(user)!=null){
+           Vw_administrador tela = new Vw_administrador();
+           tela.setVisible(true);
+           dispose();
+           acesso = true;
+       }
+       if (Backup.lista3.RealizarLogin(user)!= null){
+           Vw_administrador tela = new Vw_administrador();
+           tela.setVisible(true); 
+           dispose();
+           acesso = true;
+       }
+       if (Backup.lista2.RealizarLogin(user)!= null){
+           Vw_funcionario tela = new Vw_funcionario();
+           tela.setVisible(true);
+           dispose();
+           acesso = true;
+       }
+       if (acesso == false ){
+           JOptionPane.showMessageDialog(null, "Usuario ou senha incorreta!\nTentar Novamente");
+           txtLogin.setText("");
+           txtSenha.setText("");
+           txtLogin.requestFocus();
+       }
+    }
+		// BOTÃO SAIR
+		 system.exit(0);
